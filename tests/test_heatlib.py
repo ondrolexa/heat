@@ -5,7 +5,18 @@
 import pytest
 
 
-from heatlib import *
+from heatlib import (
+    Length,
+    Time,
+    Dirichlet_BC,
+    Neumann_BC,
+    Domain_Constant_1D,
+    Model_Constant_1D,
+    SteadyState_Constant_1D,
+    SetTemperature_1D,
+    BTCS_Constant_1D,
+    Simulation_1D,
+)
 
 
 @pytest.fixture
