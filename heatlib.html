@@ -1,0 +1,940 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>heatlib package &mdash; Heatlib 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="heatlib" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Heatlib
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">Heatlib module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">heatlib</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">heatlib package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-heatlib.boundary_conditions">heatlib.boundary_conditions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-heatlib.domains">heatlib.domains module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-heatlib.elements">heatlib.elements module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-heatlib.models">heatlib.models module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-heatlib.simulations">heatlib.simulations module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-heatlib.solvers">heatlib.solvers module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-heatlib.tracers">heatlib.tracers module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-heatlib.units">heatlib.units module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-heatlib">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Heatlib</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">heatlib</a> &raquo;</li>
+        
+      <li>heatlib package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/heatlib.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="heatlib-package">
+<h1>heatlib package<a class="headerlink" href="#heatlib-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-heatlib.boundary_conditions">
+<span id="heatlib-boundary-conditions-module"></span><h2>heatlib.boundary_conditions module<a class="headerlink" href="#module-heatlib.boundary_conditions" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="heatlib.boundary_conditions.Boundary_Condition">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.boundary_conditions.</span></code><code class="sig-name descname"><span class="pre">Boundary_Condition</span></code><a class="reference internal" href="_modules/heatlib/boundary_conditions.html#Boundary_Condition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.boundary_conditions.Boundary_Condition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.boundary_conditions.Dirichlet_BC">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.boundary_conditions.</span></code><code class="sig-name descname"><span class="pre">Dirichlet_BC</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/boundary_conditions.html#Dirichlet_BC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.boundary_conditions.Dirichlet_BC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.boundary_conditions.Boundary_Condition" title="heatlib.boundary_conditions.Boundary_Condition"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.boundary_conditions.Boundary_Condition</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.boundary_conditions.Neumann_BC">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.boundary_conditions.</span></code><code class="sig-name descname"><span class="pre">Neumann_BC</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/boundary_conditions.html#Neumann_BC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.boundary_conditions.Neumann_BC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.boundary_conditions.Boundary_Condition" title="heatlib.boundary_conditions.Boundary_Condition"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.boundary_conditions.Boundary_Condition</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-heatlib.domains">
+<span id="heatlib-domains-module"></span><h2>heatlib.domains module<a class="headerlink" href="#module-heatlib.domains" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="heatlib.domains.Domain_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.domains.</span></code><code class="sig-name descname"><span class="pre">Domain_1D</span></code><a class="reference internal" href="_modules/heatlib/domains.html#Domain_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.domains.Domain_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<dl class="py method">
+<dt id="heatlib.domains.Domain_1D.x_units">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">x_units</span></code><a class="headerlink" href="#heatlib.domains.Domain_1D.x_units" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.domains.Domain_Constant_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.domains.</span></code><code class="sig-name descname"><span class="pre">Domain_Constant_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/domains.html#Domain_Constant_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.domains.Domain_Constant_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.domains.Domain_1D" title="heatlib.domains.Domain_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.domains.Domain_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.domains.Domain_Constant_1D.dx">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dx</span></code><a class="headerlink" href="#heatlib.domains.Domain_Constant_1D.dx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.domains.Domain_Constant_1D.info">
+<code class="sig-name descname"><span class="pre">info</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/domains.html#Domain_Constant_1D.info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.domains.Domain_Constant_1D.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.domains.Domain_Constant_1D.show">
+<code class="sig-name descname"><span class="pre">show</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/domains.html#Domain_Constant_1D.show"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.domains.Domain_Constant_1D.show" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.domains.Domain_Constant_1D.x">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">x</span></code><a class="headerlink" href="#heatlib.domains.Domain_Constant_1D.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.domains.Domain_Variable_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.domains.</span></code><code class="sig-name descname"><span class="pre">Domain_Variable_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elements</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/domains.html#Domain_Variable_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.domains.Domain_Variable_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.domains.Domain_1D" title="heatlib.domains.Domain_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.domains.Domain_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.domains.Domain_Variable_1D.H">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">H</span></code><a class="headerlink" href="#heatlib.domains.Domain_Variable_1D.H" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.domains.Domain_Variable_1D.c">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">c</span></code><a class="headerlink" href="#heatlib.domains.Domain_Variable_1D.c" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.domains.Domain_Variable_1D.dx">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dx</span></code><a class="headerlink" href="#heatlib.domains.Domain_Variable_1D.dx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.domains.Domain_Variable_1D.info">
+<code class="sig-name descname"><span class="pre">info</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/domains.html#Domain_Variable_1D.info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.domains.Domain_Variable_1D.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.domains.Domain_Variable_1D.k">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">k</span></code><a class="headerlink" href="#heatlib.domains.Domain_Variable_1D.k" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.domains.Domain_Variable_1D.n">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">n</span></code><a class="headerlink" href="#heatlib.domains.Domain_Variable_1D.n" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.domains.Domain_Variable_1D.rho">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">rho</span></code><a class="headerlink" href="#heatlib.domains.Domain_Variable_1D.rho" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.domains.Domain_Variable_1D.show">
+<code class="sig-name descname"><span class="pre">show</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'k'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/domains.html#Domain_Variable_1D.show"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.domains.Domain_Variable_1D.show" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.domains.Domain_Variable_1D.x">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">x</span></code><a class="headerlink" href="#heatlib.domains.Domain_Variable_1D.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.domains.Domain_Variable_1D.xm">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">xm</span></code><a class="headerlink" href="#heatlib.domains.Domain_Variable_1D.xm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-heatlib.elements">
+<span id="heatlib-elements-module"></span><h2>heatlib.elements module<a class="headerlink" href="#module-heatlib.elements" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="heatlib.elements.Element">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.elements.</span></code><code class="sig-name descname"><span class="pre">Element</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/elements.html#Element"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.elements.Element" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="heatlib.elements.Element.info">
+<code class="sig-name descname"><span class="pre">info</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/elements.html#Element.info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.elements.Element.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-heatlib.models">
+<span id="heatlib-models-module"></span><h2>heatlib.models module<a class="headerlink" href="#module-heatlib.models" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="heatlib.models.Model_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.models.</span></code><code class="sig-name descname"><span class="pre">Model_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/models.html#Model_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.models.Model_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<dl class="py method">
+<dt id="heatlib.models.Model_1D.get_T">
+<code class="sig-name descname"><span class="pre">get_T</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/models.html#Model_1D.get_T"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.models.Model_1D.get_T" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.models.Model_1D.info">
+<code class="sig-name descname"><span class="pre">info</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/models.html#Model_1D.info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.models.Model_1D.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.models.Model_1D.plot">
+<code class="sig-name descname"><span class="pre">plot</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/models.html#Model_1D.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.models.Model_1D.plot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.models.Model_1D.solve">
+<code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solver</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/models.html#Model_1D.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.models.Model_1D.solve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.models.Model_1D.time">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">time</span></code><a class="headerlink" href="#heatlib.models.Model_1D.time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.models.Model_Constant_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.models.</span></code><code class="sig-name descname"><span class="pre">Model_Constant_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bc0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bc1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/models.html#Model_Constant_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.models.Model_Constant_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.models.Model_1D" title="heatlib.models.Model_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.models.Model_1D</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.models.Model_Variable_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.models.</span></code><code class="sig-name descname"><span class="pre">Model_Variable_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bc0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bc1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/models.html#Model_Variable_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.models.Model_Variable_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.models.Model_1D" title="heatlib.models.Model_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.models.Model_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.models.Model_Variable_1D.Tm">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">Tm</span></code><a class="headerlink" href="#heatlib.models.Model_Variable_1D.Tm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-heatlib.simulations">
+<span id="heatlib-simulations-module"></span><h2>heatlib.simulations module<a class="headerlink" href="#module-heatlib.simulations" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="heatlib.simulations.Simulation_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.simulations.</span></code><code class="sig-name descname"><span class="pre">Simulation_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_solvers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sim_solvers</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/simulations.html#Simulation_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.simulations.Simulation_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="heatlib.simulations.Simulation_1D.plot">
+<code class="sig-name descname"><span class="pre">plot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/simulations.html#Simulation_1D.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.simulations.Simulation_1D.plot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.simulations.Simulation_1D.run">
+<code class="sig-name descname"><span class="pre">run</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/simulations.html#Simulation_1D.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.simulations.Simulation_1D.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.simulations.Simulation_1D.time_steps">
+<code class="sig-name descname"><span class="pre">time_steps</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/simulations.html#Simulation_1D.time_steps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.simulations.Simulation_1D.time_steps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-heatlib.solvers">
+<span id="heatlib-solvers-module"></span><h2>heatlib.solvers module<a class="headerlink" href="#module-heatlib.solvers" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="heatlib.solvers.BTCS_Constant_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.solvers.</span></code><code class="sig-name descname"><span class="pre">BTCS_Constant_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#BTCS_Constant_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.solvers.BTCS_Constant_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.solvers.Solver_1D" title="heatlib.solvers.Solver_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.solvers.Solver_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.solvers.BTCS_Constant_1D.solve">
+<code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#BTCS_Constant_1D.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.solvers.BTCS_Constant_1D.solve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.solvers.BTCS_Variable_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.solvers.</span></code><code class="sig-name descname"><span class="pre">BTCS_Variable_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#BTCS_Variable_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.solvers.BTCS_Variable_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.solvers.Solver_1D" title="heatlib.solvers.Solver_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.solvers.Solver_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.solvers.BTCS_Variable_1D.solve">
+<code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#BTCS_Variable_1D.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.solvers.BTCS_Variable_1D.solve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.solvers.Deform_Constant_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.solvers.</span></code><code class="sig-name descname"><span class="pre">Deform_Constant_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#Deform_Constant_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.solvers.Deform_Constant_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.solvers.Solver_1D" title="heatlib.solvers.Solver_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.solvers.Solver_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.solvers.Deform_Constant_1D.solve">
+<code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#Deform_Constant_1D.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.solvers.Deform_Constant_1D.solve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.solvers.Deform_Variable_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.solvers.</span></code><code class="sig-name descname"><span class="pre">Deform_Variable_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#Deform_Variable_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.solvers.Deform_Variable_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.solvers.Solver_1D" title="heatlib.solvers.Solver_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.solvers.Solver_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.solvers.Deform_Variable_1D.solve">
+<code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#Deform_Variable_1D.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.solvers.Deform_Variable_1D.solve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.solvers.SetTemperature_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.solvers.</span></code><code class="sig-name descname"><span class="pre">SetTemperature_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#SetTemperature_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.solvers.SetTemperature_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.solvers.Solver_1D" title="heatlib.solvers.Solver_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.solvers.Solver_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.solvers.SetTemperature_1D.solve">
+<code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#SetTemperature_1D.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.solvers.SetTemperature_1D.solve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.solvers.Shift_Constant_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.solvers.</span></code><code class="sig-name descname"><span class="pre">Shift_Constant_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#Shift_Constant_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.solvers.Shift_Constant_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.solvers.Solver_1D" title="heatlib.solvers.Solver_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.solvers.Solver_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.solvers.Shift_Constant_1D.solve">
+<code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#Shift_Constant_1D.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.solvers.Shift_Constant_1D.solve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.solvers.Solver_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.solvers.</span></code><code class="sig-name descname"><span class="pre">Solver_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#Solver_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.solvers.Solver_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<dl class="py method">
+<dt id="heatlib.solvers.Solver_1D.solve">
+<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#Solver_1D.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.solvers.Solver_1D.solve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.solvers.Solver_1D.tracers">
+<code class="sig-name descname"><span class="pre">tracers</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#Solver_1D.tracers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.solvers.Solver_1D.tracers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.solvers.SteadyState_Constant_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.solvers.</span></code><code class="sig-name descname"><span class="pre">SteadyState_Constant_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#SteadyState_Constant_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.solvers.SteadyState_Constant_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.solvers.Solver_1D" title="heatlib.solvers.Solver_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.solvers.Solver_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.solvers.SteadyState_Constant_1D.solve">
+<code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#SteadyState_Constant_1D.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.solvers.SteadyState_Constant_1D.solve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.solvers.SteadyState_Variable_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.solvers.</span></code><code class="sig-name descname"><span class="pre">SteadyState_Variable_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#SteadyState_Variable_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.solvers.SteadyState_Variable_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.solvers.Solver_1D" title="heatlib.solvers.Solver_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.solvers.Solver_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.solvers.SteadyState_Variable_1D.solve">
+<code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#SteadyState_Variable_1D.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.solvers.SteadyState_Variable_1D.solve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-heatlib.tracers">
+<span id="heatlib-tracers-module"></span><h2>heatlib.tracers module<a class="headerlink" href="#module-heatlib.tracers" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="heatlib.tracers.Tracer_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.tracers.</span></code><code class="sig-name descname"><span class="pre">Tracer_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/tracers.html#Tracer_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.tracers.Tracer_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="heatlib.tracers.Tracer_1D.T">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">T</span></code><a class="headerlink" href="#heatlib.tracers.Tracer_1D.T" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.tracers.Tracer_1D.T_all">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">T_all</span></code><a class="headerlink" href="#heatlib.tracers.Tracer_1D.T_all" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.tracers.Tracer_1D.record">
+<code class="sig-name descname"><span class="pre">record</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/tracers.html#Tracer_1D.record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.tracers.Tracer_1D.record" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.tracers.Tracer_1D.time">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">time</span></code><a class="headerlink" href="#heatlib.tracers.Tracer_1D.time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.tracers.Tracer_1D.time_all">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">time_all</span></code><a class="headerlink" href="#heatlib.tracers.Tracer_1D.time_all" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.tracers.Tracer_1D.x">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">x</span></code><a class="headerlink" href="#heatlib.tracers.Tracer_1D.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.tracers.Tracer_1D.x_all">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">x_all</span></code><a class="headerlink" href="#heatlib.tracers.Tracer_1D.x_all" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-heatlib.units">
+<span id="heatlib-units-module"></span><h2>heatlib.units module<a class="headerlink" href="#module-heatlib.units" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="heatlib.units.Length">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.units.</span></code><code class="sig-name descname"><span class="pre">Length</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/units.html#Length"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.units.Length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+<dl class="py method">
+<dt id="heatlib.units.Length.to">
+<code class="sig-name descname"><span class="pre">to</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/units.html#Length.to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.units.Length.to" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="heatlib.units.Length.unit2m">
+<code class="sig-name descname"><span class="pre">unit2m</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{'cm':</span> <span class="pre">0.01,</span> <span class="pre">'dm':</span> <span class="pre">0.1,</span> <span class="pre">'km':</span> <span class="pre">1000,</span> <span class="pre">'m':</span> <span class="pre">1,</span> <span class="pre">'mm':</span> <span class="pre">0.001}</span></em><a class="headerlink" href="#heatlib.units.Length.unit2m" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.units.Time">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.units.</span></code><code class="sig-name descname"><span class="pre">Time</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/units.html#Time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.units.Time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+<dl class="py method">
+<dt id="heatlib.units.Time.to">
+<code class="sig-name descname"><span class="pre">to</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/units.html#Time.to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.units.Time.to" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="heatlib.units.Time.unit2s">
+<code class="sig-name descname"><span class="pre">unit2s</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{'Ma':</span> <span class="pre">31557600000000.0,</span> <span class="pre">'d':</span> <span class="pre">86400,</span> <span class="pre">'h':</span> <span class="pre">3600,</span> <span class="pre">'ky':</span> <span class="pre">31557600000.0,</span> <span class="pre">'min':</span> <span class="pre">60,</span> <span class="pre">'s':</span> <span class="pre">1,</span> <span class="pre">'y':</span> <span class="pre">31557600.0}</span></em><a class="headerlink" href="#heatlib.units.Time.unit2s" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-heatlib">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-heatlib" title="Permalink to this headline">¶</a></h2>
+<p>Top-level package for Heatlib.</p>
+<dl class="py class">
+<dt id="heatlib.BTCS_Constant_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">BTCS_Constant_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#BTCS_Constant_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.BTCS_Constant_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.solvers.Solver_1D" title="heatlib.solvers.Solver_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.solvers.Solver_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.BTCS_Constant_1D.solve">
+<code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#BTCS_Constant_1D.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.BTCS_Constant_1D.solve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.BTCS_Variable_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">BTCS_Variable_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#BTCS_Variable_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.BTCS_Variable_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.solvers.Solver_1D" title="heatlib.solvers.Solver_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.solvers.Solver_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.BTCS_Variable_1D.solve">
+<code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#BTCS_Variable_1D.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.BTCS_Variable_1D.solve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.Boundary_Condition">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">Boundary_Condition</span></code><a class="reference internal" href="_modules/heatlib/boundary_conditions.html#Boundary_Condition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Boundary_Condition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.Deform_Constant_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">Deform_Constant_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#Deform_Constant_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Deform_Constant_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.solvers.Solver_1D" title="heatlib.solvers.Solver_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.solvers.Solver_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.Deform_Constant_1D.solve">
+<code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#Deform_Constant_1D.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Deform_Constant_1D.solve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.Deform_Variable_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">Deform_Variable_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#Deform_Variable_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Deform_Variable_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.solvers.Solver_1D" title="heatlib.solvers.Solver_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.solvers.Solver_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.Deform_Variable_1D.solve">
+<code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#Deform_Variable_1D.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Deform_Variable_1D.solve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.Dirichlet_BC">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">Dirichlet_BC</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/boundary_conditions.html#Dirichlet_BC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Dirichlet_BC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.boundary_conditions.Boundary_Condition" title="heatlib.boundary_conditions.Boundary_Condition"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.boundary_conditions.Boundary_Condition</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.Domain_Constant_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">Domain_Constant_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/domains.html#Domain_Constant_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Domain_Constant_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.domains.Domain_1D" title="heatlib.domains.Domain_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.domains.Domain_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.Domain_Constant_1D.dx">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dx</span></code><a class="headerlink" href="#heatlib.Domain_Constant_1D.dx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Domain_Constant_1D.info">
+<code class="sig-name descname"><span class="pre">info</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/domains.html#Domain_Constant_1D.info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Domain_Constant_1D.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Domain_Constant_1D.show">
+<code class="sig-name descname"><span class="pre">show</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/domains.html#Domain_Constant_1D.show"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Domain_Constant_1D.show" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Domain_Constant_1D.x">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">x</span></code><a class="headerlink" href="#heatlib.Domain_Constant_1D.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.Domain_Variable_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">Domain_Variable_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elements</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/domains.html#Domain_Variable_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Domain_Variable_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.domains.Domain_1D" title="heatlib.domains.Domain_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.domains.Domain_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.Domain_Variable_1D.H">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">H</span></code><a class="headerlink" href="#heatlib.Domain_Variable_1D.H" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Domain_Variable_1D.c">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">c</span></code><a class="headerlink" href="#heatlib.Domain_Variable_1D.c" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Domain_Variable_1D.dx">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dx</span></code><a class="headerlink" href="#heatlib.Domain_Variable_1D.dx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Domain_Variable_1D.info">
+<code class="sig-name descname"><span class="pre">info</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/domains.html#Domain_Variable_1D.info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Domain_Variable_1D.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Domain_Variable_1D.k">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">k</span></code><a class="headerlink" href="#heatlib.Domain_Variable_1D.k" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Domain_Variable_1D.n">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">n</span></code><a class="headerlink" href="#heatlib.Domain_Variable_1D.n" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Domain_Variable_1D.rho">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">rho</span></code><a class="headerlink" href="#heatlib.Domain_Variable_1D.rho" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Domain_Variable_1D.show">
+<code class="sig-name descname"><span class="pre">show</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'k'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/domains.html#Domain_Variable_1D.show"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Domain_Variable_1D.show" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Domain_Variable_1D.x">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">x</span></code><a class="headerlink" href="#heatlib.Domain_Variable_1D.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Domain_Variable_1D.xm">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">xm</span></code><a class="headerlink" href="#heatlib.Domain_Variable_1D.xm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.Element">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">Element</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/elements.html#Element"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Element" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="heatlib.Element.info">
+<code class="sig-name descname"><span class="pre">info</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/elements.html#Element.info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Element.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.Length">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">Length</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/units.html#Length"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+<dl class="py method">
+<dt id="heatlib.Length.to">
+<code class="sig-name descname"><span class="pre">to</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/units.html#Length.to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Length.to" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="heatlib.Length.unit2m">
+<code class="sig-name descname"><span class="pre">unit2m</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{'cm':</span> <span class="pre">0.01,</span> <span class="pre">'dm':</span> <span class="pre">0.1,</span> <span class="pre">'km':</span> <span class="pre">1000,</span> <span class="pre">'m':</span> <span class="pre">1,</span> <span class="pre">'mm':</span> <span class="pre">0.001}</span></em><a class="headerlink" href="#heatlib.Length.unit2m" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.Model_Constant_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">Model_Constant_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bc0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bc1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/models.html#Model_Constant_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Model_Constant_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.models.Model_1D" title="heatlib.models.Model_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.models.Model_1D</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.Model_Variable_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">Model_Variable_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bc0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bc1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/models.html#Model_Variable_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Model_Variable_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.models.Model_1D" title="heatlib.models.Model_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.models.Model_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.Model_Variable_1D.Tm">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">Tm</span></code><a class="headerlink" href="#heatlib.Model_Variable_1D.Tm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.Neumann_BC">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">Neumann_BC</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/boundary_conditions.html#Neumann_BC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Neumann_BC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.boundary_conditions.Boundary_Condition" title="heatlib.boundary_conditions.Boundary_Condition"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.boundary_conditions.Boundary_Condition</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.SetTemperature_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">SetTemperature_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#SetTemperature_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.SetTemperature_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.solvers.Solver_1D" title="heatlib.solvers.Solver_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.solvers.Solver_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.SetTemperature_1D.solve">
+<code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#SetTemperature_1D.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.SetTemperature_1D.solve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.Shift_Constant_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">Shift_Constant_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#Shift_Constant_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Shift_Constant_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.solvers.Solver_1D" title="heatlib.solvers.Solver_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.solvers.Solver_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.Shift_Constant_1D.solve">
+<code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#Shift_Constant_1D.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Shift_Constant_1D.solve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.Simulation_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">Simulation_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_solvers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sim_solvers</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/simulations.html#Simulation_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Simulation_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="heatlib.Simulation_1D.plot">
+<code class="sig-name descname"><span class="pre">plot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/simulations.html#Simulation_1D.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Simulation_1D.plot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Simulation_1D.run">
+<code class="sig-name descname"><span class="pre">run</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/simulations.html#Simulation_1D.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Simulation_1D.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Simulation_1D.time_steps">
+<code class="sig-name descname"><span class="pre">time_steps</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/simulations.html#Simulation_1D.time_steps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Simulation_1D.time_steps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.SteadyState_Constant_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">SteadyState_Constant_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#SteadyState_Constant_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.SteadyState_Constant_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.solvers.Solver_1D" title="heatlib.solvers.Solver_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.solvers.Solver_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.SteadyState_Constant_1D.solve">
+<code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#SteadyState_Constant_1D.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.SteadyState_Constant_1D.solve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.SteadyState_Variable_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">SteadyState_Variable_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#SteadyState_Variable_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.SteadyState_Variable_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#heatlib.solvers.Solver_1D" title="heatlib.solvers.Solver_1D"><code class="xref py py-class docutils literal notranslate"><span class="pre">heatlib.solvers.Solver_1D</span></code></a></p>
+<dl class="py method">
+<dt id="heatlib.SteadyState_Variable_1D.solve">
+<code class="sig-name descname"><span class="pre">solve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tracers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/solvers.html#SteadyState_Variable_1D.solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.SteadyState_Variable_1D.solve" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.Time">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">Time</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/units.html#Time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+<dl class="py method">
+<dt id="heatlib.Time.to">
+<code class="sig-name descname"><span class="pre">to</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/units.html#Time.to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Time.to" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="heatlib.Time.unit2s">
+<code class="sig-name descname"><span class="pre">unit2s</span></code><em class="property"> <span class="pre">=</span> <span class="pre">{'Ma':</span> <span class="pre">31557600000000.0,</span> <span class="pre">'d':</span> <span class="pre">86400,</span> <span class="pre">'h':</span> <span class="pre">3600,</span> <span class="pre">'ky':</span> <span class="pre">31557600000.0,</span> <span class="pre">'min':</span> <span class="pre">60,</span> <span class="pre">'s':</span> <span class="pre">1,</span> <span class="pre">'y':</span> <span class="pre">31557600.0}</span></em><a class="headerlink" href="#heatlib.Time.unit2s" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="heatlib.Tracer_1D">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">heatlib.</span></code><code class="sig-name descname"><span class="pre">Tracer_1D</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/tracers.html#Tracer_1D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Tracer_1D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="heatlib.Tracer_1D.T">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">T</span></code><a class="headerlink" href="#heatlib.Tracer_1D.T" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Tracer_1D.T_all">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">T_all</span></code><a class="headerlink" href="#heatlib.Tracer_1D.T_all" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Tracer_1D.record">
+<code class="sig-name descname"><span class="pre">record</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/heatlib/tracers.html#Tracer_1D.record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#heatlib.Tracer_1D.record" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Tracer_1D.time">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">time</span></code><a class="headerlink" href="#heatlib.Tracer_1D.time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Tracer_1D.time_all">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">time_all</span></code><a class="headerlink" href="#heatlib.Tracer_1D.time_all" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Tracer_1D.x">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">x</span></code><a class="headerlink" href="#heatlib.Tracer_1D.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="heatlib.Tracer_1D.x_all">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">x_all</span></code><a class="headerlink" href="#heatlib.Tracer_1D.x_all" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="modules.html" class="btn btn-neutral float-left" title="heatlib" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Ondrej Lexa.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
