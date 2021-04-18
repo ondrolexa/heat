@@ -1,28 +1,32 @@
-=====
+#####
 Usage
-=====
+#####
 
 To use this library you have to import it.
 
-.. code:: ipython3
+.. code-block:: python
 
     from heatlib import *
 
+***************
+Simple examples
+***************
+
 Example for domain with constant physical properties
-----------------------------------------------------
+====================================================
 
 Lets create model for crustal (35 km) geotherm with 100m resolution,
 1e-6 heat production and default other crustal properties… ``plot_unit``
 argument allows change plotting spatial units.
 
-.. code:: ipython3
+.. code-block:: python
 
     d_c = Domain_Constant_1D(L=Length(35, 'km'), n=350, H=1e-6, plot_unit='km')
 
 Now we need to define boundary conditions. We will use ``Dirichlet_BC``
 at top and ``Neumann_BC`` with 32mW/m2 at bottom.
 
-.. code:: ipython3
+.. code-block:: python
 
     tbc = Dirichlet_BC(0)
     bbc = Neumann_BC(-0.032)
@@ -30,13 +34,13 @@ at top and ``Neumann_BC`` with 32mW/m2 at bottom.
 Now we can create ``Model_Constant_1D`` instance to assemble domain and
 BCs… ``time_unit`` argument allows change plotting time units.
 
-.. code:: ipython3
+.. code-block:: python
 
     m_c = Model_Constant_1D(d_c, tbc, bbc, time_unit='y')
 
 Now, we can setup solvers we will use for modelling
 
-.. code:: ipython3
+.. code-block:: python
 
     init_c = SteadyState_Constant_1D()
     intrusion_c = SetTemperature_1D(xmin=10000, xmax=15000, value=700)
@@ -45,7 +49,7 @@ Now, we can setup solvers we will use for modelling
 
 We will use two solvers to calculate initial state…
 
-.. code:: ipython3
+.. code-block:: python
 
     m_c.solve(init_c)
     m_c.solve(intrusion_c)
@@ -56,7 +60,7 @@ We will use two solvers to calculate initial state…
 .. image:: images/output_12_0.png
 
 
-.. code:: ipython3
+.. code-block:: python
 
     m_c.info()
 
@@ -72,7 +76,7 @@ We will use two solvers to calculate initial state…
 Once initial state is ready, we can use evolutionary solver to solve
 evolutionary equation… Note, that time step is defined in solver.
 
-.. code:: ipython3
+.. code-block:: python
 
     m_c.solve(small_step_c)
     m_c.plot()
@@ -82,7 +86,7 @@ evolutionary equation… Note, that time step is defined in solver.
 .. image:: images/output_15_0.png
 
 
-.. code:: ipython3
+.. code-block:: python
 
     m_c.get_T(Length(12.5, 'km'))
 
@@ -98,7 +102,7 @@ evolutionary equation… Note, that time step is defined in solver.
 To calculate evolutionary solution for more time steps, we can use
 solver instantiated with ``steps`` argument.
 
-.. code:: ipython3
+.. code-block:: python
 
     m_c.solve(big_step_c)
     m_c.plot()
@@ -108,12 +112,9 @@ solver instantiated with ``steps`` argument.
 .. image:: images/output_18_0.png
 
 
-.. code:: ipython3
+.. code-block:: python
 
     m_c.get_T(Length(12.5, 'km'))
-
-
-
 
 .. parsed-literal::
 
@@ -122,11 +123,11 @@ solver instantiated with ``steps`` argument.
 
 
 Example for domain with variable physical properties and grid size
-------------------------------------------------------------------
+==================================================================
 
 Lets create model for crustal geotherm with several layers…
 
-.. code:: ipython3
+.. code-block:: python
 
     uc_sed = Element('UCS', dx=25, k=3.2, H=1e-6, rho=2350, c=1000)
     uc_base = Element('UCB', dx=50, k=2.5, H=3e-6, rho=2700, c=900)
@@ -138,7 +139,7 @@ To create domain, we need to provide list of elements to define domain
 geometry… We can use multilication and addition of elements to assemble
 it
 
-.. code:: ipython3
+.. code-block:: python
 
     geom = 100*uc_sed + 50*uc_base + 100*mc + 100*lc_felsic + 100*lc_mafic
     d_v = Domain_Variable_1D(geom, plot_unit='km')
@@ -155,7 +156,7 @@ it
 
 ``show`` method of could be used to visualize domain and property
 
-.. code:: ipython3
+.. code-block:: python
 
     d_v.show('H')
 
@@ -167,13 +168,13 @@ it
 Now we can create ``Model_Variable_1D`` instance to assemble domain and
 BCs…
 
-.. code:: ipython3
+.. code-block:: python
 
     m_v = Model_Variable_1D(d_v, tbc, bbc, time_unit='y')
 
 Now, we can setup solvers we will use for modelling
 
-.. code:: ipython3
+.. code-block:: python
 
     init_v = SteadyState_Variable_1D()
     intrusion_v = SetTemperature_1D(xmin=10000, xmax=15000, value=700)
@@ -182,7 +183,7 @@ Now, we can setup solvers we will use for modelling
 
 We will use two solvers to calculate initial state…
 
-.. code:: ipython3
+.. code-block:: python
 
     m_v.solve(init_v)
     m_v.solve(intrusion_v)
@@ -193,7 +194,7 @@ We will use two solvers to calculate initial state…
 .. image:: images/output_31_0.png
 
 
-.. code:: ipython3
+.. code-block:: python
 
     m_v.info()
 
@@ -213,7 +214,7 @@ Once initial state is ready, we can use evolutionary solver to solve
 evolutionary equation… Remember that time step is defined in solver and
 units of time step are defined by ``t_units`` property of model.
 
-.. code:: ipython3
+.. code-block:: python
 
     m_v.solve(small_step_v)
     m_v.plot()
@@ -226,7 +227,7 @@ units of time step are defined by ``t_units`` property of model.
 To calculate evolutionary solution for more time steps, we can use
 solver instantiated with ``step`` argument.
 
-.. code:: ipython3
+.. code-block:: python
 
     m_v.solve(big_step_v)
     m_v.plot()
@@ -236,18 +237,107 @@ solver instantiated with ``step`` argument.
 .. image:: images/output_36_0.png
 
 
-Simulation
-----------
+******************
+Additional solvers
+******************
+
+
+Deformation
+===========
+
+``Deform_Constant_1D`` solver allows to strech computational domain
+instantaneosly by given ``factor``.
+
+.. code-block:: python
+
+    d_c = Domain_Constant_1D(L=35000, n=350, H=1e-6, plot_unit='km')
+    m_c = Model_Constant_1D(d_c, tbc, bbc, time_unit='Ma')
+    calc_dt = Time(5000, 'y')
+    edot = 3e-15
+    stretch = np.exp(edot * calc_dt.to('s'))
+    deform_c = Deform_Constant_1D(factor=stretch)
+    btcs_c = BTCS_Constant_1D(dt=calc_dt)
+
+.. code-block:: python
+
+    s = Simulation_1D(m_c, init_c, 50*[deform_c, btcs_c], repeat=10)
+
+.. code-block:: python
+
+    s.run()
+
+
+.. parsed-literal::
+
+    Done.
+
+
+.. code-block:: python
+
+    s.plot(figsize=(14, 8))
+
+
+
+.. image:: images/output_49_0.png
+
+
+Erosion
+=======
+
+``Shift_Constant_1D`` solver allows to extend/trim domain by given
+``amount``.
+
+.. code-block:: python
+
+    d_c = Domain_Constant_1D(L=35000, n=350, H=1e-6, plot_unit='km')
+    m_c = Model_Constant_1D(d_c, tbc, bbc, time_unit='Ma')
+    calc_dt = Time(5000, 'y')
+    erosion_vel = Length(0.5, 'cm').to('m') / Time(1, 'y')
+    erode = erosion_vel * calc_dt
+    erosion_c = Shift_Constant_1D(amount=-erode)
+    btcs_c = BTCS_Constant_1D(dt=calc_dt)
+
+.. code-block:: python
+
+    s = Simulation_1D(m_c, [init_c, intrusion_c], 20*[erosion_c, btcs_c], repeat=10)
+
+.. code-block:: python
+
+    s.run()
+
+
+.. parsed-literal::
+
+    Done.
+
+
+.. code-block:: python
+
+    s.plot(figsize=(14, 8))
+
+
+
+.. image:: images/output_54_0.png
+
+
+***********
+Simulations
+***********
+
+Assembly simulation
+===================
 
 ``Simulation_1D`` class allows you to automatize the model calculation,
 store model results and could be used for model post-processing.
 
 We will use model used in previous example and we will define solvers…
 
-.. code:: ipython3
+.. code-block:: python
 
     init_v = SteadyState_Variable_1D()
-    intrusion_v = SetTemperature_1D(xmin=Length(21, 'km'), xmax=Length(24, 'km'), value=700)
+    intrusion_v = SetTemperature_1D(xmin=Length(21, 'km'),
+                                    xmax=Length(24, 'km'),
+                                    value=700)
     diffuse_v = BTCS_Variable_1D(dt=Time(5000, 'y'), steps=50)
 
 To define simulation, we will provide the model, solvers or lists of
@@ -255,7 +345,7 @@ solvers used to calculate initial state and evolutionary solution. The
 number of simulation cycles to be calculated could be specified by
 keyword argument ``repeat``.
 
-.. code:: ipython3
+.. code-block:: python
 
     init_solvers = [init_v]
     simulation_solvers = [intrusion_v, diffuse_v]
@@ -263,7 +353,7 @@ keyword argument ``repeat``.
 
 Once the simulation is created we can run model…
 
-.. code:: ipython3
+.. code-block:: python
 
     s.run()
 
@@ -275,105 +365,32 @@ Once the simulation is created we can run model…
 
 Now we can plot results
 
-.. code:: ipython3
+.. code-block:: python
 
     m_v.time_unit = 'Ma'
     s.plot(figsize=(14, 8))
 
 
-
 .. image:: images/output_44_0.png
 
 
-Deformation
------------
+********************
+User-defined solvers
+********************
 
-``Deform_Constant_1D`` solver allows to strech computational domain
-instantaneosly by given ``factor``.
-
-.. code:: ipython3
-
-    d_c = Domain_Constant_1D(L=35000, n=350, H=1e-6, plot_unit='km')
-    m_c = Model_Constant_1D(d_c, tbc, bbc, time_unit='Ma')
-    calc_dt = Time(5000, 'y')
-    edot = 3e-15
-    stretch = np.exp(edot * calc_dt.to('s'))
-    deform_c = Deform_Constant_1D(factor=stretch)
-    btcs_c = BTCS_Constant_1D(dt=calc_dt)
-
-.. code:: ipython3
-
-    s = Simulation_1D(m_c, init_c, 50*[deform_c, btcs_c], repeat=10)
-
-.. code:: ipython3
-
-    s.run()
-
-
-.. parsed-literal::
-
-    Done.
-
-
-.. code:: ipython3
-
-    s.plot(figsize=(14, 8))
-
-
-
-.. image:: images/output_49_0.png
-
-
-Erosion
--------
-
-``Shift_Constant_1D`` solver allows to extend/trim domain by given
-``amount``.
-
-.. code:: ipython3
-
-    d_c = Domain_Constant_1D(L=35000, n=350, H=1e-6, plot_unit='km')
-    m_c = Model_Constant_1D(d_c, tbc, bbc, time_unit='Ma')
-    calc_dt = Time(5000, 'y')
-    erosion_vel = Length(0.5, 'cm').to('m') / Time(1, 'y')
-    erode = erosion_vel * calc_dt
-    erosion_c = Shift_Constant_1D(amount=-erode)
-    btcs_c = BTCS_Constant_1D(dt=calc_dt)
-
-.. code:: ipython3
-
-    s = Simulation_1D(m_c, [init_c, intrusion_c], 20*[erosion_c, btcs_c], repeat=10)
-
-.. code:: ipython3
-
-    s.run()
-
-
-.. parsed-literal::
-
-    Done.
-
-
-.. code:: ipython3
-
-    s.plot(figsize=(14, 8))
-
-
-
-.. image:: images/output_54_0.png
-
-
-Tracking P-T-t evolution
-------------------------
+Tracking P-T-t evolution with tracer
+====================================
 
 Create program that will track time, temperature and depth evolution of
 sample **S** involved in *“Naive orogeny”* characterized by convergence
 with constant strain rate :math:`\dot{\epsilon}`, erosion with rate
 :math:`\dot{r}` dependent on actual topography (which is calculated from
 Airy isostasy of thickenned crust) and transient heat conduction for
-total time 20 Ma. Sample **S** is initially located in depth 25km within
-thermally equilibrated (steady-state geotherm) crust with initial
-thickness 35km. Plot result in temperature-depth diagram.
+total time 20 Ma.
+
+We want to trace the depth-temperature evolution of particle initially
+located in depth 25km within thermally equilibrated (steady-state geotherm)
+crust with initial thickness 35km and plot results.
 
 .. image:: images/naiveorogen.png
 
@@ -423,7 +440,7 @@ which could be plugged into simulation. Easiest way is to subclass existing
 solvers. The first example is solver based on `Deform_Constant_1D` and
 calculate deformation factor from time-step and strain-rate.
 
-.. code:: ipython3
+.. code-block:: python
 
     class MyDeformation_Constant_1D(Deform_Constant_1D):
     
@@ -435,11 +452,12 @@ calculate deformation factor from time-step and strain-rate.
 Second example shows, how to implement solver, which need to access model properties
 during simulation...
 
-.. code:: ipython3
+.. code-block:: python
     
     class MyErosion_Constant_1D(Shift_Constant_1D):
     
-        def __init__(self, edot, dt=0, Ke=3, rhoc=2800, rhom=3200, href=35000, hmax=70000, **kwargs):
+        def __init__(self, edot, dt=0,
+                     Ke=3, rhoc=2800, rhom=3200,href=35000, hmax=70000, **kwargs):
             self.dt = abs(dt)
             # lambdas for Airy topography and erosion rate
             self.topo = lambda h: ((h - href) * (rhom - rhoc)) / rhom
@@ -448,12 +466,13 @@ during simulation...
     
         def solve(self, model, tracers=None):
             # calculate amount and call parent solver
-            self.amount = model.domain.L * np.exp(-self.rdot(model.domain.L) * self.dt) - model.domain.L
+            self.amount = model.domain.L * (np.exp(-self.rdot(model.domain.L) * self.dt) - 1)
             super().solve(model, tracers=tracers)
 
-.. code:: ipython3
+.. code-block:: python
 
-    d_c = Domain_Constant_1D(L=Length(35, 'km'), k=2.5, n=350, H=1e-6, rho=2800, c=900, plot_unit='km')
+    d_c = Domain_Constant_1D(L=Length(35, 'km'), k=2.5,
+                              n=350, H=1e-6, rho=2800, c=900, plot_unit='km')
     tbc = Dirichlet_BC(0)
     bbc = Neumann_BC(-0.025)
     m_c = Model_Constant_1D(d_c, tbc, bbc, time_unit='Ma')
@@ -464,12 +483,12 @@ during simulation...
     erosion_c = MyErosion_Constant_1D(edot=3e-15, dt=calc_dt, rhoc=d_c.rho)
     btcs_c = BTCS_Constant_1D(dt=calc_dt, log=True)  # store to tracers
 
-.. code:: ipython3
+.. code-block:: python
 
     p = Tracer_1D('A', Length(25, 'km'), plot_unit='km', time_unit='Ma')
     s = Simulation_1D(m_c, init_c, 400*[deform_c, erosion_c, btcs_c], repeat=10, tracers=p)
 
-.. code:: ipython3
+.. code-block:: python
 
     s.run()
 
@@ -479,7 +498,7 @@ during simulation...
     Done.
 
 
-.. code:: ipython3
+.. code-block:: python
 
     s.plot(figsize=(14, 8))
 
@@ -488,7 +507,7 @@ during simulation...
 .. image:: images/output_60_0.png
 
 
-.. code:: ipython3
+.. code-block:: python
 
     plt.figure(figsize=(14, 8))
     plt.plot(p.T_all, p.x_all*2750*9.81/1e5)
@@ -500,7 +519,7 @@ during simulation...
 .. image:: images/output_61_0.png
 
 
-.. code:: ipython3
+.. code-block:: python
 
     fig, ax1 = plt.subplots(figsize=(14, 6))
     color1 = 'tab:red'
@@ -517,5 +536,3 @@ during simulation...
 
 
 .. image:: images/output_62_0.png
-
-
