@@ -12,8 +12,8 @@ class Tracer_1D:
         self.name = name
         self._x = abs(x)
         self._T = None
-        self.store = {}
-        self.log = None
+        self.store = dict(T=[], x=[], time_abs=[])
+        self.log = []
         self._store_ix = []
         self.plot_unit = kwargs.get('plot_unit', 'm')  # plotting spatial unit
         self.time_unit = kwargs.get('time_unit', 's')  # default plotting time units
@@ -35,6 +35,9 @@ class Tracer_1D:
                 self.store['x'].append(self._x)
                 self.store['time_abs'].append(model._time_abs)
                 self.log.append(log)
+
+    def mark_current(self):
+        self._store_ix.append(len(self.store['time_abs']) - 1)
 
     @property
     def x_all(self):

@@ -64,7 +64,7 @@ class Simulation_1D:
         )
         if self.tracers is not None:
             for tracer in self.tracers:
-                tracer._store_ix.append(len(tracer.store['time_abs']) - 1)
+                tracer.mark_current()
         # main simulation loop
         for i in range(self.repeat):
             for s in self.sim_solvers:
@@ -78,5 +78,5 @@ class Simulation_1D:
             )
             if self.tracers is not None:
                 for tracer in self.tracers:
-                    tracer._store_ix.append(len(tracer.store['time_abs']) - 1)
+                    tracer.mark_current()
         print('Done.')

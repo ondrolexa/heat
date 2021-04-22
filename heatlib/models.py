@@ -49,11 +49,11 @@ class Model_1D(ABC):
         print(self.domain.info())
         print(self.bc1)
 
-    def solve(self, solver):
+    def solve(self, solver, **kwargs):
         assert isinstance(
             solver, Solver_1D
         ), 'You have to use Solver_1D instance as argument.'
-        solver.solve(self)
+        solver.solve(self, **kwargs)
 
     def plot(self):
         if self.T is not None:
