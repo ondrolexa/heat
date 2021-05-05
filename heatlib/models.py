@@ -22,6 +22,9 @@ class Model_1D(ABC):
             self.bc1, Boundary_Condition
         ), 'Third argument must be Boundary_Condition.'
         self.time_unit = kwargs.get('time_unit', 's')  # default plotting time units
+        self.orientation = kwargs.get('orientation', 'vertical')  # default plotting orientation
+        self.figsize = kwargs.get('figsize', (9, 6))  # default figure size
+        self.flipy = kwargs.get('flipy', True)  # plot x as negative for vertical orientation
         self.T = None
         self._time_abs = 0.0
 
@@ -57,12 +60,20 @@ class Model_1D(ABC):
 
     def plot(self):
         if self.T is not None:
-            fig, ax = plt.subplots(figsize=(9, 6))
-            ax.plot(
-                self.T, -self.domain.x_units, label=f't={self.time:g}{self.time_unit}'
-            )
-            ax.set_xlabel('Temperature [°C]')
-            ax.set_ylabel(f'Depth [{self.domain.plot_unit}]')
+            fig, ax = plt.subplots(figsize=self.figsize)
+            if self.orientation == 'vertical':
+                multi = -1 if self.flipy else 1
+                ax.plot(
+                    self.T, multi * self.domain.x_units, label=f't={self.time:g}{self.time_unit}'
+                )
+                ax.set_xlabel('Temperature [°C]')
+                ax.set_ylabel(f'Depth [{self.domain.plot_unit}]')
+            else:
+                ax.plot(
+                    self.domain.x_units, self.T, label=f't={self.time:g}{self.time_unit}'
+                )
+                ax.set_xlabel(f'Distance [{self.domain.plot_unit}]')
+                ax.set_ylabel('Temperature [°C]')
             ax.legend(loc='best')
             plt.show()
         else:
