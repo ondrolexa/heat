@@ -93,6 +93,6 @@ class Model_Variable_1D(Model_1D):
     @property
     def Tm(self):
         if self.T is not None:
-            return np.interp(self.domain.xm, self.domain.x, self.T[-1])
+            return np.interp(self.domain.xm, self.domain.x, self.T)
         else:
             print('Model has not yet solution.')
