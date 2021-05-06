@@ -154,17 +154,22 @@ class BTCS_Constant_1D(Solver_1D):
 
 class Deform_Variable_1D(Solver_1D):
     def __init__(self, **kwargs):
-        self.factor = kwargs.get('factor', 1)
+        self.factors = kwargs.get('factors', 1)
         self.steps = kwargs.get('steps', 1)
         super().__init__(**kwargs)
 
     def solve(self, model, tracers=None):
+        factors = np.atleast_1d(self.factors)
+        if len(factors) == 1:
+            factors = factors * np.ones_like(model.domain.elements)
         for i in range(self.steps):
-            for e in model.domain.elements:
-                e.dx *= self.factor
+            x_old = model.domain.x
+            for e, factor in zip(model.domain.elements, factors):
+                e.dx *= factor
             if tracers is not None:
+                x_new = model.domain.x
                 for tracer in tracers:
-                    tracer._x *= self.factor
+                    tracer._x = np.interp(tracer._x, x_old, x_new)
         super().tracers(model, tracers)
 
 
