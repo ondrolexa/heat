@@ -1,9 +1,9 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
-from heatlib.units import Length, Time
-from heatlib.tracers import Tracer_1D
 from heatlib.solvers import Solver_1D
+from heatlib.tracers import Tracer_1D
+from heatlib.units import Length, Time
 
 #################################################
 #            Simulation                         #
@@ -22,33 +22,34 @@ class Simulation_1D:
             self.sim_solvers = [sim_solvers]
         else:
             self.sim_solvers = sim_solvers
-        tracers = kwargs.get('tracers', None)
+        tracers = kwargs.get("tracers", None)
         if isinstance(tracers, Tracer_1D):
             self.tracers = [tracers]
         else:
             self.tracers = tracers
         # kwargs
-        self.repeat = kwargs.get('repeat', 1)
+        self.repeat = kwargs.get("repeat", 1)
+        self.figsize = kwargs.get("figsize", (9, 6))  # default figure size
         # init
         self._sols = []
 
     def time_steps(self):
         return np.array(
-            [sol['time_abs'] / abs(Time(1, self.model.time_unit)) for sol in self._sols]
+            [sol["time_abs"] / abs(Time(1, self.model.time_unit)) for sol in self._sols]
         )
 
     def plot(self, **kwargs):
-        solutions = kwargs.pop('solutions', range(len(self._sols)))
-        fig, ax = plt.subplots(**kwargs)
+        solutions = kwargs.pop("solutions", range(len(self._sols)))
+        fig, ax = plt.subplots(figsize=self.figsize)
         for sol in solutions:
-            T = self._sols[sol]['T']
-            x = self._sols[sol]['x'] / abs(Length(1, self.model.domain.plot_unit))
-            tm = self._sols[sol]['time_abs'] / abs(Time(1, self.model.time_unit))
-            lbl = f'{tm:g}'
+            T = self._sols[sol]["T"]
+            x = self._sols[sol]["x"] / abs(Length(1, self.model.domain.plot_unit))
+            tm = self._sols[sol]["time_abs"] / abs(Time(1, self.model.time_unit))
+            lbl = f"{tm:g}"
             ax.plot(T, -x, label=lbl)
-            ax.set_xlabel('Temperature [°C]')
-            ax.set_ylabel(f'Depth [{self.model.domain.plot_unit}]')
-            ax.legend(loc='best', title=f'Time [{self.model.time_unit}]')
+            ax.set_xlabel("Temperature [°C]")
+            ax.set_ylabel(f"Depth [{self.model.domain.plot_unit}]")
+            ax.legend(loc="best", title=f"Time [{self.model.time_unit}]")
         plt.show()
 
     def run(self):
@@ -79,4 +80,4 @@ class Simulation_1D:
             if self.tracers is not None:
                 for tracer in self.tracers:
                     tracer.mark_current()
-        print('Done.')
+        print("Done.")

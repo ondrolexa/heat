@@ -9,10 +9,10 @@ class Element:
     def __init__(self, name, **kwargs):
         self.name = name
         self.dx = abs(kwargs.get("dx", 1))
-        self.k = float(kwargs.get("k", 1))
-        self.H = float(kwargs.get("H", 0))
-        self.rho = float(kwargs.get("rho", 1))
-        self.c = float(kwargs.get("c", 1))
+        self.k = abs(kwargs.get("k", 1))
+        self.H = abs(kwargs.get("H", 0))
+        self.rho = abs(kwargs.get("rho", 1))
+        self.c = abs(kwargs.get("c", 1))
 
     def __mul__(self, other):
         return [copy.copy(self) for i in range(other)]

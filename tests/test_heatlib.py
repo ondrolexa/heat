@@ -4,24 +4,24 @@
 
 import pytest
 
-
 from heatlib import (
-    Length,
-    Time,
+    BTCS_1D,
     Dirichlet_BC,
+    Domain_1D,
+    Element,
+    Model_1D,
     Neumann_BC,
-    Domain_Constant_1D,
-    Model_Constant_1D,
-    SteadyState_Constant_1D,
     SetTemperature_1D,
-    BTCS_Constant_1D,
     Simulation_1D,
+    SteadyState_1D,
+    Time,
 )
 
 
 @pytest.fixture
-def domain_c():
-    return Domain_Constant_1D(L=Length(35, "km"), n=350, H=1e-6, plot_unit="km")
+def domain():
+    el = Element("A", dx=100, k=2.5, rho=2700, c=900, H=1e-6)
+    return Domain_1D(350 * el, plot_unit="km")
 
 
 @pytest.fixture
@@ -35,13 +35,13 @@ def bbc():
 
 
 @pytest.fixture
-def model_c(domain_c, tbc, bbc):
-    return Model_Constant_1D(domain_c, tbc, bbc, time_unit="year")
+def model(domain, tbc, bbc):
+    return Model_1D(domain, tbc, bbc, time_unit="year")
 
 
 @pytest.fixture
-def steady_c():
-    return SteadyState_Constant_1D()
+def steady():
+    return SteadyState_1D()
 
 
 @pytest.fixture
@@ -51,33 +51,33 @@ def intrusion():
 
 @pytest.fixture
 def single_step():
-    return BTCS_Constant_1D(dt=Time("1000", "year"))
+    return BTCS_1D(dt=Time("1000", "year"))
 
 
 @pytest.fixture
 def repeated_step():
-    return BTCS_Constant_1D(dt=Time("1000", "year"), steps=20)
+    return BTCS_1D(dt=Time("1000", "year"), steps=20)
 
 
-def test_steady_constant_solver(model_c, steady_c):
-    model_c.solve(steady_c)
-    assert model_c.T[-1] == pytest.approx(693)
+def test_steady_state_solver(model, steady):
+    model.solve(steady)
+    assert model.T[-1] == pytest.approx(693)
 
 
-def test_set_temperature_solver(model_c, steady_c, intrusion):
-    model_c.solve(steady_c)
-    model_c.solve(intrusion)
-    assert model_c.get_T(12500) == 700
+def test_set_temperature_solver(model, steady, intrusion):
+    model.solve(steady)
+    model.solve(intrusion)
+    assert model.get_T(12500) == 700
 
 
-def test_btcs_constant_solver(model_c, steady_c, intrusion, repeated_step):
-    model_c.solve(steady_c)
-    model_c.solve(intrusion)
-    model_c.solve(repeated_step)
-    assert model_c.get_T(12500) == pytest.approx(688.48948)
+def test_btcs_solver(model, steady, intrusion, repeated_step):
+    model.solve(steady)
+    model.solve(intrusion)
+    model.solve(repeated_step)
+    assert model.get_T(12500) == pytest.approx(689.50185908)
 
 
-def test_simulation(model_c, steady_c, intrusion, single_step):
-    s = Simulation_1D(model_c, [steady_c, intrusion], [single_step], repeat=20)
+def test_simulation(model, steady, intrusion, single_step):
+    s = Simulation_1D(model, [steady, intrusion], [single_step], repeat=20)
     s.run()
-    assert s.model.get_T(12500) == pytest.approx(688.48948)
+    assert s.model.get_T(12500) == pytest.approx(689.50185908)
