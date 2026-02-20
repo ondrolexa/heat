@@ -21,7 +21,7 @@ from heatlib import (
 
 @pytest.fixture
 def domain_c():
-    return Domain_Constant_1D(L=Length(35, 'km'), n=350, H=1e-6, plot_unit='km')
+    return Domain_Constant_1D(L=Length(35, "km"), n=350, H=1e-6, plot_unit="km")
 
 
 @pytest.fixture
@@ -36,7 +36,7 @@ def bbc():
 
 @pytest.fixture
 def model_c(domain_c, tbc, bbc):
-    return Model_Constant_1D(domain_c, tbc, bbc, time_unit='y')
+    return Model_Constant_1D(domain_c, tbc, bbc, time_unit="year")
 
 
 @pytest.fixture
@@ -51,12 +51,12 @@ def intrusion():
 
 @pytest.fixture
 def single_step():
-    return BTCS_Constant_1D(dt=Time('1000', 'y'))
+    return BTCS_Constant_1D(dt=Time("1000", "year"))
 
 
 @pytest.fixture
 def repeated_step():
-    return BTCS_Constant_1D(dt=Time('1000', 'y'), steps=20)
+    return BTCS_Constant_1D(dt=Time("1000", "year"), steps=20)
 
 
 def test_steady_constant_solver(model_c, steady_c):

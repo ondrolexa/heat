@@ -8,11 +8,11 @@ import copy
 class Element:
     def __init__(self, name, **kwargs):
         self.name = name
-        self.dx = float(abs(kwargs.get('dx', 1)))
-        self.k = float(kwargs.get('k', 1))
-        self.H = float(kwargs.get('H', 0))
-        self.rho = float(kwargs.get('rho', 1))
-        self.c = float(kwargs.get('c', 1))
+        self.dx = abs(kwargs.get("dx", 1))
+        self.k = float(kwargs.get("k", 1))
+        self.H = float(kwargs.get("H", 0))
+        self.rho = float(kwargs.get("rho", 1))
+        self.c = float(kwargs.get("c", 1))
 
     def __mul__(self, other):
         return [copy.copy(self) for i in range(other)]
@@ -27,11 +27,11 @@ class Element:
         return other + [self]
 
     def __repr__(self):
-        return f'|{self.name}|'
+        return f"|{self.name}|"
 
     def info(self):
         return (
-            f'{self.name}: k={self.k:g}  H={self.H:g}  rho={self.rho:g}  c={self.c:g}'
+            f"{self.name}: k={self.k:g}  H={self.H:g}  rho={self.rho:g}  c={self.c:g}"
         )
 
     def __eq__(self, othr):
